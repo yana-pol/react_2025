@@ -6,7 +6,7 @@ export const Counter = () => {
   return (
     <div>
       <button onClick={() => setCount(count >= 5 ? 5 : count + 1)}>+</button>
-      <span>{count}</span>{" "}
+      <span>{" " + count + " "}</span>
       <button onClick={() => setCount(count === 0 ? 0 : count - 1)}>-</button>
     </div>
   );
