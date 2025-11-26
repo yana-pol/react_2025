@@ -7,7 +7,7 @@ export const RestaurantsList = ({ restaurants = [] }) => {
   return (
     <>
       <ul style={{ display: "flex", gap: "5px" }}>
-        {restaurants.map((rest, index) => (
+        {restaurants.map((rest) => (
           <li key={rest.id} style={{ listStyle: "none" }}>
             <button onClick={() => setActiveRest(index)}>{rest.name}</button>
           </li>
