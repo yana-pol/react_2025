@@ -1,13 +1,9 @@
-import { useState } from "react";
-
-export const Counter = () => {
-  const [count, setCount] = useState(0);
-
+export const Counter = ({ value, onIncrement, onDecrement }) => {
   return (
     <div>
-      <button onClick={() => setCount(count >= 5 ? 5 : count + 1)}>+</button>
-      <span>{" " + count + " "}</span>
-      <button onClick={() => setCount(count === 0 ? 0 : count - 1)}>-</button>
+      <button onClick={onIncrement}>+</button>
+      <span>{" " + value + " "}</span>
+      <button onClick={onDecrement}>-</button>
     </div>
   );
 };
