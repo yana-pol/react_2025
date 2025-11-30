@@ -1,7 +1,7 @@
 import { Counter } from "../counter/counter";
 import { useState } from "react";
 
-export const Dish = ({ dish }) => {
+export const DishListItem = ({ dish }) => {
   const [count, setCount] = useState(0);
   return (
     <li key={dish.id}>

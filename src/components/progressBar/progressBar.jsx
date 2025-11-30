@@ -42,7 +42,7 @@ export const ProgressBar = () => {
           backgroundColor: "darkviolet",
           width: `${scrollPercentage}%`,
         }}
-      ></div>
+      />
     </div>
   );
 };
