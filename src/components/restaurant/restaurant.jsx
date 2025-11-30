@@ -1,5 +1,6 @@
 import { ReviewsList } from "../reviews/reviewsList.jsx";
 import { MenuList } from "../menu/menuList.jsx";
+import { ReviewForm } from "../reviewForm/reviewForm.jsx";
 
 export const Restaurant = ({ rest }) => {
   const { name, menu, reviews } = rest;

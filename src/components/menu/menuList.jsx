@@ -1,4 +1,4 @@
-import { Counter } from "../counter/counter";
+import { DishListItem } from "../dish/dishListItem";
 
 export const MenuList = ({ menu }) => {
   return (
@@ -6,9 +6,7 @@ export const MenuList = ({ menu }) => {
       <h3>Menu</h3>
       <ul>
         {menu.map((item) => (
-          <li key={item.id}>
-            {item.name} <Counter />
-          </li>
+          <DishListItem key={item.id} dish={item} />
         ))}
       </ul>
     </div>

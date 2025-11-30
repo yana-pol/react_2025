@@ -1,3 +1,5 @@
+import { ReviewForm } from "../reviewForm/reviewForm";
+
 export const ReviewsList = ({ reviews }) => {
   return (
     <div>
@@ -7,6 +9,7 @@ export const ReviewsList = ({ reviews }) => {
           <li key={item.id}>{item.text}</li>
         ))}
       </ul>
+      <ReviewForm />
     </div>
   );
 };
