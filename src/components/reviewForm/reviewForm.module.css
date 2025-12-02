@@ -1,0 +1,42 @@
+.fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 3px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  width: 80%;
+}
+
+.input,
+.textarea {
+  padding: 15px;
+  border: 1px solid #2c3e50;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2c3e50;
+  font-size: 13px;
+}
+
+.h4 {
+  margin: 1em 0 0.5em 1em;
+  font-weight: 400;
+  color: #6596ce;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 30px;
+}
+
+.btn {
+  box-sizing: border-box;
+  padding: 0 24px;
+  border: 1px solid #2c3e50;
+  margin-top: 10px;
+  border-radius: 3px;
+  height: 30px;
+  font-size: 20px;
+  color: #2c3e50;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #fff;
+}

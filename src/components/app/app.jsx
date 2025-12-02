@@ -4,6 +4,8 @@ import { Footer } from "../layouts/footer";
 import { RestaurantsList } from "../restaurantsList/restaurantsList";
 import { ProgressBar } from "../progressBar/progressBar";
 
+import "./app.css";
+
 export const App = () => {
   return (
     <>

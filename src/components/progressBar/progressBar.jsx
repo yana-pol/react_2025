@@ -33,14 +33,16 @@ export const ProgressBar = () => {
         top: "0",
         left: "0",
         right: "0",
+        zIndex: "100",
       }}
     >
       <div
         className="progress-fill"
         style={{
           height: "100%",
-          backgroundColor: "darkviolet",
+          backgroundColor: "#387dcaff",
           width: `${scrollPercentage}%`,
+          zIndex: "100",
         }}
       />
     </div>
