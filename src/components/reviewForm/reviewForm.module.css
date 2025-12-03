@@ -27,16 +27,3 @@
   font-family: "Josefin Sans", sans-serif;
   font-size: 30px;
 }
-
-.btn {
-  box-sizing: border-box;
-  padding: 0 24px;
-  border: 1px solid #2c3e50;
-  margin-top: 10px;
-  border-radius: 3px;
-  height: 30px;
-  font-size: 20px;
-  color: #2c3e50;
-  font-family: "Josefin Sans", sans-serif;
-  background-color: #fff;
-}

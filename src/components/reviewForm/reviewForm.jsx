@@ -2,6 +2,7 @@ import { useReducer } from "react";
 import { Counter } from "../counter/counter";
 
 import styles from "./reviewForm.module.css";
+import { Button } from "../button/button";
 
 const INITIAL_FORM = {
   name: "",
@@ -74,12 +75,13 @@ export const ReviewForm = () => {
               });
           }}
         />
-        <button
-          className={styles.btn}
-          onClick={() => dispatch({ type: CLEAR_ACTION })}
-        >
-          Clear
-        </button>
+
+        <Button
+          value="Clear"
+          disable={false}
+          className={"btnClear"}
+          handler={() => dispatch({ type: CLEAR_ACTION })}
+        />
       </fieldset>
     </div>
   );
