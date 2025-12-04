@@ -17,6 +17,7 @@ export const RestaurantsList = ({ restaurants = [] }) => {
               value={rest.name}
               handler={() => setActiveRestaurantId(rest.id)}
               disabled={activeRestaurantId === rest.id}
+              className={"btn"}
             />
           </li>
         ))}
