@@ -1,3 +1,5 @@
+import styles from "./header.module.css";
+
 export const Header = () => {
-  return <header>Restaurants</header>;
+  return <header className={styles.header}>Restaurants Guide</header>;
 };
