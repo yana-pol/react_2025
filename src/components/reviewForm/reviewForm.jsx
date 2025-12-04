@@ -75,7 +75,6 @@ export const ReviewForm = () => {
               });
           }}
         />
-
         <Button
           value="Clear"
           disable={false}
