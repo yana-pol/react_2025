@@ -4,24 +4,14 @@ import { Button } from "../button/button";
 export const Counter = ({ value, onIncrement, onDecrement }) => {
   return (
     <div className={styles.div}>
-      <Button
-        value={"-"}
-        handler={onDecrement}
-        disabled={false}
-        className={"btnCounter"}
-      />
+      <Button value={"-"} handler={onDecrement} size="small" />
       <input
         className={styles.input}
         type="text"
         value={value}
         readOnly={true}
-      ></input>
-      <Button
-        value={"+"}
-        handler={onIncrement}
-        disabled={false}
-        className={"btnCounter"}
       />
+      <Button value={"+"} handler={onIncrement} size="small" />
     </div>
   );
 };
