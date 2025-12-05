@@ -1,0 +1,29 @@
+.h3 {
+  margin: 1em 0 0.5em 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #6596ce;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 50px;
+  line-height: 54px;
+  text-shadow: 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.ul {
+  list-style-type: none;
+}
+
+.text {
+  margin: 1em 0 0.5em 0;
+  color: #0d264f;
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.user {
+  margin: 1em 0 0.5em 0;
+  color: #0d264f;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Josefin Sans", sans-serif;
+}

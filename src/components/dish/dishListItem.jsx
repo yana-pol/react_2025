@@ -1,10 +1,12 @@
 import { Counter } from "../counter/counter";
 import { useState } from "react";
 
+import styles from "./dishListItem.module.css";
+
 export const DishListItem = ({ dish }) => {
   const [count, setCount] = useState(0);
   return (
-    <li key={dish.id}>
+    <li key={dish.id} className={styles.name}>
       {dish.name}{" "}
       <Counter
         value={count}

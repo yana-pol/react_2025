@@ -1,0 +1,8 @@
+.name {
+  margin: 1em 0 0.5em 0;
+  color: #0d264f;
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  gap: 10px;
+}

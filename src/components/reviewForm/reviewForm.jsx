@@ -1,6 +1,9 @@
 import { useReducer } from "react";
 import { Counter } from "../counter/counter";
 
+import styles from "./reviewForm.module.css";
+import { Button } from "../button/button";
+
 const INITIAL_FORM = {
   name: "",
   text: "",
@@ -35,49 +38,50 @@ export const ReviewForm = () => {
 
   return (
     <div>
-      <div>
-        <div>
-          <label style={{ display: "block" }}>Name:</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => {
-              dispatch({ payload: e.target.value, type: UPDATE_NAME_ACTION });
-            }}
-          />
-        </div>
-        <div>
-          <label style={{ display: "block" }}>Text:</label>
-          <textarea
-            value={text}
-            onChange={(e) =>
-              dispatch({ payload: e.target.value, type: UPDATE_TEXT_ACTION })
-            }
-            rows="4"
-          />
-        </div>
-        <div>
-          <label>Rating:</label>
-          <Counter
-            value={form.rating}
-            onIncrement={() => {
-              if (rating < 5)
-                dispatch({
-                  type: "UPDATE_RATING_ACTION",
-                  payload: rating + 1,
-                });
-            }}
-            onDecrement={() => {
-              if (rating > 0)
-                dispatch({
-                  type: "UPDATE_RATING_ACTION",
-                  payload: rating - 1,
-                });
-            }}
-          />
-        </div>
-        <button onClick={() => dispatch({ type: CLEAR_ACTION })}>clear</button>
-      </div>
+      <h4 className={styles.h4}>Please leave a review</h4>
+      <fieldset className={styles.fieldset}>
+        <input
+          placeholder="Name"
+          className={styles.input}
+          type="text"
+          value={name}
+          onChange={(e) => {
+            dispatch({ payload: e.target.value, type: UPDATE_NAME_ACTION });
+          }}
+        />
+        <textarea
+          placeholder="Text"
+          className={styles.textarea}
+          value={text}
+          onChange={(e) =>
+            dispatch({ payload: e.target.value, type: UPDATE_TEXT_ACTION })
+          }
+          rows="4"
+        />
+        <Counter
+          value={form.rating}
+          onIncrement={() => {
+            if (rating < 5)
+              dispatch({
+                type: "UPDATE_RATING_ACTION",
+                payload: rating + 1,
+              });
+          }}
+          onDecrement={() => {
+            if (rating > 0)
+              dispatch({
+                type: "UPDATE_RATING_ACTION",
+                payload: rating - 1,
+              });
+          }}
+        />
+        <Button
+          value="Clear"
+          disable={false}
+          className={"btnClear"}
+          handler={() => dispatch({ type: CLEAR_ACTION })}
+        />
+      </fieldset>
     </div>
   );
 };

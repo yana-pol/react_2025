@@ -1,0 +1,6 @@
+.ul {
+  display: flex;
+  gap: 5px;
+  list-style-type: none;
+  justify-content: center;
+}

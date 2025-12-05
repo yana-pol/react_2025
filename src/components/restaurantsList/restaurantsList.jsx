@@ -1,5 +1,8 @@
+import { Button } from "../button/button";
 import { Restaurant } from "../Restaurant/restaurant";
 import { useState } from "react";
+
+import styles from "./restaurantList.module.css";
 
 export const RestaurantsList = ({ restaurants = [] }) => {
   const [activeRestaurantId, setActiveRestaurantId] = useState(
@@ -7,12 +10,14 @@ export const RestaurantsList = ({ restaurants = [] }) => {
   );
   return (
     <>
-      <ul style={{ display: "flex", gap: "5px" }}>
+      <ul className={styles.ul}>
         {restaurants.map((rest) => (
-          <li key={rest.id} style={{ listStyle: "none" }}>
-            <button onClick={() => setActiveRestaurantId(rest.id)}>
-              {rest.name}
-            </button>
+          <li key={rest.id}>
+            <Button
+              value={rest.name}
+              handler={() => setActiveRestaurantId(rest.id)}
+              disabled={activeRestaurantId === rest.id}
+            />
           </li>
         ))}
       </ul>
