@@ -1,0 +1,14 @@
+.logIn {
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+
+.name {
+  position: absolute;
+  top: 70px;
+  right: 140px;
+  font-family: "Josefin Sans", sans-serif;
+  color: #0d64c6;
+  font-size: 22px;
+}
