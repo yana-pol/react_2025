@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
+import styles from "./progressBar.module.css";
+
 export const ProgressBar = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
@@ -23,23 +25,10 @@ export const ProgressBar = () => {
   }, []);
 
   return (
-    <div
-      id="progress-container"
-      style={{
-        height: "8px",
-        width: "100%",
-        backgroundColor: "#d1dced",
-        position: "fixed",
-        top: "0",
-        left: "0",
-        right: "0",
-      }}
-    >
+    <div className={styles.container}>
       <div
-        className="progress-fill"
+        className={styles.progress}
         style={{
-          height: "100%",
-          backgroundColor: "darkviolet",
           width: `${scrollPercentage}%`,
         }}
       />
