@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import styles from "./button.module.css";
-import { ThemeContext } from "../app/app";
 import classNames from "classnames";
+import { ThemeContext } from "../themeContextProvider";
 
 export const Button = ({
   value,

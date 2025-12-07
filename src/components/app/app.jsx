@@ -5,24 +5,23 @@ import { RestaurantsList } from "../restaurantsList/restaurantsList";
 import { ProgressBar } from "../progressBar/progressBar";
 
 import "./app.css";
-import { createContext, useState } from "react";
 import { ToggleThemeButton } from "../toggleThemeButton/toggleThemeButton";
+import { UserContextProvider } from "../userContextProvider/userCOntextProvider";
+import { ThemeContextProvider } from "../themeContextProvider/themeContextProvider";
 
-export const ThemeContext = createContext();
-
-export const theme = "light";
 export const App = () => {
-  const [theme, setTheme] = useState("light");
   return (
     <>
-      <ThemeContext value={{ theme, setTheme }}>
-        <ProgressBar />
+      <ThemeContextProvider>
+        <UserContextProvider>
+          <ProgressBar />
 
-        <Header />
-        <ToggleThemeButton />
-        <RestaurantsList restaurants={restaurants} />
-        <Footer />
-      </ThemeContext>
+          <Header />
+          <ToggleThemeButton />
+          <RestaurantsList restaurants={restaurants} />
+          <Footer />
+        </UserContextProvider>
+      </ThemeContextProvider>
     </>
   );
 };
