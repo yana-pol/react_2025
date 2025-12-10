@@ -1,11 +1,10 @@
 import { ReviewsList } from "../reviews/reviewsList.jsx";
 import { MenuList } from "../menu/menuList.jsx";
 
-export const Restaurant = ({ rest }) => {
-  const { menu, reviews } = rest;
+export const Restaurant = ({ menu, reviews }) => {
   return (
     <>
-      <MenuList menu={menu} />
+      <MenuList menuIds={menu} />
       <ReviewsList reviews={reviews} />
     </>
   );
