@@ -9,7 +9,7 @@ export const ReviewContainer = ({ reviewId }) => {
   });
 
   return (
-    <li key={review.id} className={styles.text}>
+    <li className={styles.text}>
       <div className={styles.user}>
         <User userId={review.userId} />
       </div>

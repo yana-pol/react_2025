@@ -29,7 +29,6 @@ export const RestaurantsList = () => {
         {restaurantsIds.map((id) => (
           <li key={id}>
             <RestaurantTab
-              key={id}
               restaurantId={id}
               handler={() => handleSetActiveRestaurantId(id)}
               disabled={activeRestaurantId === id}

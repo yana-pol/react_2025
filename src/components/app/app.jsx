@@ -14,20 +14,18 @@ import { store } from "../../redux/store";
 
 export const App = () => {
   return (
-    <>
-      <Provider store={store}>
-        <ThemeContextProvider>
-          <UserContextProvider>
-            <ProgressBar />
+    <Provider store={store}>
+      <ThemeContextProvider>
+        <UserContextProvider>
+          <ProgressBar />
 
-            <Header />
-            <ToggleThemeButton />
-            <Cart />
-            <RestaurantsList restaurants={restaurants} />
-            <Footer />
-          </UserContextProvider>
-        </ThemeContextProvider>
-      </Provider>
-    </>
+          <Header />
+          <ToggleThemeButton />
+          <Cart />
+          <RestaurantsList restaurants={restaurants} />
+          <Footer />
+        </UserContextProvider>
+      </ThemeContextProvider>
+    </Provider>
   );
 };

@@ -13,17 +13,14 @@ import { UserContext } from "../userContextProvider";
 export const DishListItem = ({ dish }) => {
   const dispatch = useDispatch();
 
-  const id = dish.id;
-  const name = dish.name;
-  let amount = useSelector((state) => selectAmountById(state, id));
+  const { id, name } = dish;
+  const amount = useSelector((state) => selectAmountById(state, id));
 
   const increment = () => {
-    amount = amount >= 5 ? 5 : amount + 1;
-    dispatch(addToCart({ id, name, amount }));
+    if (amount < 5) dispatch(addToCart({ id, name, amount: amount + 1 }));
   };
   const decrement = () => {
-    amount = amount === 0 ? 0 : amount - 1;
-    dispatch(deleteFromCart({ id, amount }));
+    if (amount > 0) dispatch(deleteFromCart({ id, amount: amount - 1 }));
   };
 
   const { user } = useContext(UserContext);

@@ -5,7 +5,7 @@ export const Restaurant = ({ menu, reviews }) => {
   return (
     <>
       <MenuList menuIds={menu} />
-      <ReviewsList reviews={reviews} />
+      <ReviewsList reviewsIds={reviews} />
     </>
   );
 };
