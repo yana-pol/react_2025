@@ -2,18 +2,17 @@ import { ReviewForm } from "../reviewForm/reviewForm";
 import styles from "./reviewsList.module.css";
 import { useContext } from "react";
 import { UserContext } from "../userContextProvider/index.js";
+import { ReviewContainer } from "./reviewContainer.jsx";
 
-export const ReviewsList = ({ reviews }) => {
+export const ReviewsList = ({ reviewsIds }) => {
   const { user } = useContext(UserContext);
+
   return (
     <div>
       <h3 className={styles.h3}>Reviews</h3>
       <ul className={styles.ul}>
-        {reviews.map((item) => (
-          <li key={item.id} className={styles.text}>
-            <div className={styles.user}>{item.user}</div>
-            {item.text}
-          </li>
+        {reviewsIds.map((reviewId) => (
+          <ReviewContainer key={reviewId} reviewId={reviewId} />
         ))}
       </ul>
       {user ? <ReviewForm /> : null}
