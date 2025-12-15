@@ -1,0 +1,10 @@
+.link {
+  margin: 1em 0 0.5em 0.5em;
+  display: block;
+  text-decoration: none;
+  color: #0d264f;
+}
+
+.link:visited {
+  color: #0d264f;
+}

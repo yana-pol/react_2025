@@ -1,12 +1,16 @@
 import { useSelector } from "react-redux";
-import { selectRestaurantById } from "../../redux/entities/restaurant/slice";
+import { selectRestaurantsIds } from "../../redux/entities/restaurant/slice";
 import { Restaurant } from "../restaurant/restaurant";
+import { useParams } from "react-router";
 
-export const RestaurantContainer = ({ restaurantId }) => {
-  const restaurant = useSelector((state) =>
-    selectRestaurantById(state, restaurantId)
+export const RestaurantContainer = () => {
+  const restaurantsIds = useSelector(selectRestaurantsIds);
+  const param = useParams();
+  const { restaurantId } = param ? param : restaurantsIds[0];
+
+  return (
+    <>
+      <Restaurant restaurantId={restaurantId} />
+    </>
   );
-
-  const { menu, reviews } = restaurant;
-  return <Restaurant menu={menu} reviews={reviews} />;
 };
