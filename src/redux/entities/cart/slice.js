@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createSelector } from "@reduxjs/toolkit";
 
 export const cartSlice = createSlice({
   name: "cart",
@@ -23,21 +23,22 @@ export const cartSlice = createSlice({
   },
 
   selectors: {
-    selectCartItems: (state) =>
-      Object.keys(state).reduce((acc, id) => {
-        acc.push({
-          id,
-          amount: state[id].amount,
-          name: state[id].name,
-        });
-
-        return acc;
-      }, []),
-
     selectAmountById: (state, id) => state[id]?.amount ?? 0,
   },
 });
 
-export const { selectCartItems, selectAmountById } = cartSlice.selectors;
+const selectCartSlice = (state) => state[cartSlice.name];
+export const selectCartItems = createSelector([selectCartSlice], (cartSlice) =>
+  Object.keys(cartSlice).reduce((acc, id) => {
+    acc.push({
+      id,
+      amount: cartSlice[id].amount,
+      name: cartSlice[id].name,
+    });
+
+    return acc;
+  }, [])
+);
+export const { selectAmountById } = cartSlice.selectors;
 
 export const { addToCart, deleteFromCart } = cartSlice.actions; // action creator

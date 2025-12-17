@@ -3,15 +3,25 @@ import styles from "./reviewsList.module.css";
 import { useContext } from "react";
 import { UserContext } from "../userContextProvider/index.js";
 import { ReviewContainer } from "./reviewContainer.jsx";
+import { useParams } from "react-router";
+import { selectRestaurantById } from "../../redux/entities/restaurant/slice";
+import { useSelector } from "react-redux";
 
-export const ReviewsList = ({ reviewsIds }) => {
+export const ReviewsList = () => {
+  const restaurantId = useParams();
+
+  const restaurant = useSelector((state) =>
+    selectRestaurantById(state, restaurantId.restaurantId)
+  );
+
+  const { reviews } = restaurant;
+
   const { user } = useContext(UserContext);
 
   return (
     <div>
-      <h3 className={styles.h3}>Reviews</h3>
       <ul className={styles.ul}>
-        {reviewsIds.map((reviewId) => (
+        {reviews.map((reviewId) => (
           <ReviewContainer key={reviewId} reviewId={reviewId} />
         ))}
       </ul>
