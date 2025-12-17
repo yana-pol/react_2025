@@ -8,9 +8,5 @@ export const RestaurantContainer = () => {
   const param = useParams();
   const { restaurantId } = param ? param : restaurantsIds[0];
 
-  return (
-    <>
-      <Restaurant restaurantId={restaurantId} />
-    </>
-  );
+  return <Restaurant restaurantId={restaurantId} />;
 };

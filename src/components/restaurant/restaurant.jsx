@@ -13,14 +13,6 @@ export const Restaurant = ({ restaurantId }) => {
     return null;
   }
 
-  const currentPath = window.location.pathname;
-  const isRoot = currentPath === `/restaurants/${restaurantId}`;
-
-  if (isRoot) {
-    const path = `/restaurants/${restaurantId}/menu`;
-    return <Navigate to={path} />;
-  }
-
   return (
     <>
       <div className={styles.container}>

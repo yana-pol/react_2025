@@ -6,7 +6,7 @@ import { ReviewsList } from "../reviews/reviewsList";
 import { RestaurantLayout } from "../restaurantLayout/restaurantLayout";
 import { DishListItem } from "../dish/dishListItem";
 import { HomePage } from "../homePage/homePage";
-
+import { Navigate } from "react-router";
 export const Router = () => {
   return (
     <RouterProvider
@@ -31,6 +31,10 @@ export const Router = () => {
                   path: ":restaurantId",
                   element: <RestaurantPage />,
                   children: [
+                    {
+                      index: true,
+                      element: <Navigate to="menu" />,
+                    },
                     { path: "menu", element: <MenuPage /> },
                     { path: "reviews", element: <ReviewsList /> },
                   ],
