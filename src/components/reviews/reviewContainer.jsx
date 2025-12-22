@@ -4,10 +4,7 @@ import styles from "./reviewsList.module.css";
 import { User } from "../user/user";
 
 export const ReviewContainer = ({ reviewId }) => {
-  const review = useSelector((state) => {
-    return selectReviewById(state, reviewId);
-  });
-
+  const review = useSelector((state) => selectReviewById(state, reviewId));
   return (
     <li className={styles.text}>
       <div className={styles.user}>

@@ -1,11 +1,31 @@
-import { ReviewsList } from "../reviews/reviewsList.jsx";
-import { MenuList } from "../menu/menuList.jsx";
+import { Outlet } from "react-router";
+import { Tab } from "../tab/tab";
+import styles from "./restaurant.module.css";
+import { useEffect } from "react";
+import { getRestaurantById } from "../../redux/entities/restaurant/getRestaurantById";
+import { useDispatch } from "react-redux";
+export const Restaurant = ({ restaurantId }) => {
+  const dispatch = useDispatch();
 
-export const Restaurant = ({ menu, reviews }) => {
+  useEffect(() => {
+    dispatch(getRestaurantById(restaurantId));
+  }, [dispatch, restaurantId]);
+
   return (
     <>
-      <MenuList menuIds={menu} />
-      <ReviewsList reviewsIds={reviews} />
+      <div className={styles.container}>
+        <Tab
+          restaurantId={restaurantId}
+          link={`/restaurants/${restaurantId}/menu`}
+          title={"Menu"}
+        />
+        <Tab
+          restaurantId={restaurantId}
+          link={`/restaurants/${restaurantId}/reviews`}
+          title={"Reviews"}
+        />
+      </div>
+      <Outlet />
     </>
   );
 };

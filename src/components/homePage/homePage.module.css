@@ -1,0 +1,17 @@
+.img {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+.div {
+  text-align: center;
+}
+
+.link {
+  margin: 1em 0 0.5em 0.5em;
+  display: block;
+  text-decoration: none;
+  color: #0d264f;
+  font-size: 22px;
+}

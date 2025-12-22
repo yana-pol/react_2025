@@ -1,0 +1,38 @@
+.root {
+  box-shadow: none;
+  border: 1px solid #2c3e50;
+  cursor: pointer;
+  font-family: "Josefin Sans", sans-serif;
+
+  font-size: 22px;
+  padding: 7px 24px;
+  height: 45px;
+
+  text-decoration: none;
+
+  color: #0d64c6;
+  background-color: #fff;
+
+  display: flex;
+  gap: 5px;
+  list-style-type: none;
+  justify-content: center;
+}
+
+.light {
+  background-color: #f3f4f7;
+}
+
+.dark {
+  background-color: rgb(17, 17, 165);
+  color: rgb(255, 255, 255);
+
+  &:disabled {
+    background-color: rgb(78, 78, 130);
+  }
+}
+
+.active {
+  background-color: rgb(193, 223, 249);
+  pointer-events: none;
+}
