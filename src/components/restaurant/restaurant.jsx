@@ -1,17 +1,15 @@
-import { Outlet, Navigate } from "react-router";
-import { selectRestaurantById } from "../../redux/entities/restaurant/slice";
-import { useSelector } from "react-redux";
+import { Outlet } from "react-router";
 import { Tab } from "../tab/tab";
 import styles from "./restaurant.module.css";
-
+import { useEffect } from "react";
+import { getRestaurantById } from "../../redux/entities/restaurant/getRestaurantById";
+import { useDispatch } from "react-redux";
 export const Restaurant = ({ restaurantId }) => {
-  const restaurant = useSelector((state) =>
-    selectRestaurantById(state, restaurantId)
-  );
+  const dispatch = useDispatch();
 
-  if (!restaurant) {
-    return null;
-  }
+  useEffect(() => {
+    dispatch(getRestaurantById(restaurantId));
+  }, [dispatch, restaurantId]);
 
   return (
     <>

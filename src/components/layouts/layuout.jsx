@@ -15,8 +15,6 @@ export const Layout = ({ children }) => {
         <Cart />
         {children}
       </main>
-
-      {/* <RestaurantPage restaurants={restaurants} /> */}
       <Footer />
     </>
   );
